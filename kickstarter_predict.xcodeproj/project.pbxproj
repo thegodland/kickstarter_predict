@@ -12,6 +12,8 @@
 		44DEFAC9218E59BB00769FBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DEFAC7218E59BB00769FBC /* Main.storyboard */; };
 		44DEFACB218E59BC00769FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44DEFACA218E59BC00769FBC /* Assets.xcassets */; };
 		44DEFACE218E59BC00769FBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DEFACC218E59BC00769FBC /* LaunchScreen.storyboard */; };
+		44DEFADA218EAC1900769FBC /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DEFAD9218EAC1900769FBC /* ResultVC.swift */; };
+		44DEFADE218EC12300769FBC /* my_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 44DEFADD218EC12300769FBC /* my_model.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		44DEFACA218E59BC00769FBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44DEFACD218E59BC00769FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44DEFACF218E59BC00769FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44DEFAD9218EAC1900769FBC /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		44DEFADD218EC12300769FBC /* my_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = my_model.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 				44DEFAC5218E59BB00769FBC /* ViewController.swift */,
 				44DEFAC7218E59BB00769FBC /* Main.storyboard */,
 				44DEFACA218E59BC00769FBC /* Assets.xcassets */,
+				44DEFADD218EC12300769FBC /* my_model.mlmodel */,
 				44DEFACC218E59BC00769FBC /* LaunchScreen.storyboard */,
 				44DEFACF218E59BC00769FBC /* Info.plist */,
+				44DEFAD9218EAC1900769FBC /* ResultVC.swift */,
 			);
 			path = kickstarter_predict;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DEFAC6218E59BB00769FBC /* ViewController.swift in Sources */,
+				44DEFADA218EAC1900769FBC /* ResultVC.swift in Sources */,
+				44DEFADE218EC12300769FBC /* my_model.mlmodel in Sources */,
 				44DEFAC4218E59BB00769FBC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
