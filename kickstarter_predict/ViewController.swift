@@ -25,35 +25,36 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     var categoryPickerView : UIPickerView!
     var countryPickerView : UIPickerView!
     
-    let categoryOption : [String] = ["ThreeDPrinting", "Academic", "Accessories", "Action", "Animals",
-                                     "Animation", "Anthologies", "Apparel", "Apps", "Architecture","Art",
-        "ArtBooks", "Audio" ,"Bacon", "Blues", "Calendars", "CameraEquipment",
-        "Candles", "Ceramics", "ChildrensBooks", "Childrenswear", "Chiptune",
-        "CivicDesign", "ClassicalMusic", "Comedy", "ComicBooks", "Comics",
-        "CommunityGardens", "ConceptualArt", "Cookbooks", "CountryFolk",
-        "Couture", "Crafts", "Crochet", "DIY", "DIYElectronics", "Dance", "Design",
-        "DigitalArt", "Documentary", "Drama", "Drinks","ElectronicMusic",
-        "Embroidery", "Events", "Experimental", "FabricationTools", "Faith" ,"Family",
-        "Fantasy" ,"FarmersMarkets", "Farms" ,"Fashion", "Festivals", "Fiction",
-        "FilmVideo", "FineArt", "Flight", "Food", "FoodTrucks", "Footwear",
-        "Gadgets", "Games", "GamingHardware", "Glass", "GraphicDesign",
-        "GraphicNovels", "Hardware", "HipHop", "Horror", "Illustration", "Immersive",
-        "IndieRock", "Installations", "InteractiveDesign", "Jazz", "Jewelry",
-        "Journalism", "Kids", "Knitting", "Latin", "Letterpress", "LiteraryJournals",
-        "LiterarySpaces", "LiveGames", "Makerspaces", "Metal", "MixedMedia",
-        "MobileGames", "MovieTheaters", "Music", "MusicVideos", "Musical",
-        "NarrativeFilm" ,"Nature", "Nonfiction", "Painting", "People",
-        "PerformanceArt", "Performances", "Periodicals" ,"PetFashion", "Photo",
-        "Photobooks", "Photography", "Places", "PlayingCards", "Plays" ,"Poetry",
-        "Pop", "Pottery", "Print", "Printing", "ProductDesign" ,"PublicArt",
-        "Publishing" ,"Punk", "Puzzles", "Quilts", "RB", "RadioPodcasts",
-        "Readytowear", "Residencies", "Restaurants", "Robots", "Rock", "Romance",
-        "ScienceFiction", "Sculpture", "Shorts", "SmallBatch", "Software", "Sound",
-        "SpaceExploration", "Spaces", "Stationery", "TabletopGames", "Taxidermy",
-        "Technology" ,"Television" ,"Textiles" ,"Theater", "Thrillers" ,"Translations",
-        "Typography" ,"Vegan" ,"Video", "VideoArt" ,"VideoGames" ,"Wearables",
-        "Weaving" ,"Web", "Webcomics" ,"Webseries", "Woodworking" ,"Workshops",
-        "WorldMusic" ,"YoungAdult" ,"Zines"]
+    let categoryOption : [String] = ["Art", "Comics", "Crafts", "Dance", "Design", "Fashion", "FilmVideo", "Food", "Games", "Journalism", "Music", "Photography", "Publishing", "Technology", "Theater"]
+//    let categoryOption : [String] = ["ThreeDPrinting", "Academic", "Accessories", "Action", "Animals",
+//                                     "Animation", "Anthologies", "Apparel", "Apps", "Architecture","Art",
+//        "ArtBooks", "Audio" ,"Bacon", "Blues", "Calendars", "CameraEquipment",
+//        "Candles", "Ceramics", "ChildrensBooks", "Childrenswear", "Chiptune",
+//        "CivicDesign", "ClassicalMusic", "Comedy", "ComicBooks", "Comics",
+//        "CommunityGardens", "ConceptualArt", "Cookbooks", "CountryFolk",
+//        "Couture", "Crafts", "Crochet", "DIY", "DIYElectronics", "Dance", "Design",
+//        "DigitalArt", "Documentary", "Drama", "Drinks","ElectronicMusic",
+//        "Embroidery", "Events", "Experimental", "FabricationTools", "Faith" ,"Family",
+//        "Fantasy" ,"FarmersMarkets", "Farms" ,"Fashion", "Festivals", "Fiction",
+//        "FilmVideo", "FineArt", "Flight", "Food", "FoodTrucks", "Footwear",
+//        "Gadgets", "Games", "GamingHardware", "Glass", "GraphicDesign",
+//        "GraphicNovels", "Hardware", "HipHop", "Horror", "Illustration", "Immersive",
+//        "IndieRock", "Installations", "InteractiveDesign", "Jazz", "Jewelry",
+//        "Journalism", "Kids", "Knitting", "Latin", "Letterpress", "LiteraryJournals",
+//        "LiterarySpaces", "LiveGames", "Makerspaces", "Metal", "MixedMedia",
+//        "MobileGames", "MovieTheaters", "Music", "MusicVideos", "Musical",
+//        "NarrativeFilm" ,"Nature", "Nonfiction", "Painting", "People",
+//        "PerformanceArt", "Performances", "Periodicals" ,"PetFashion", "Photo",
+//        "Photobooks", "Photography", "Places", "PlayingCards", "Plays" ,"Poetry",
+//        "Pop", "Pottery", "Print", "Printing", "ProductDesign" ,"PublicArt",
+//        "Publishing" ,"Punk", "Puzzles", "Quilts", "RB", "RadioPodcasts",
+//        "Readytowear", "Residencies", "Restaurants", "Robots", "Rock", "Romance",
+//        "ScienceFiction", "Sculpture", "Shorts", "SmallBatch", "Software", "Sound",
+//        "SpaceExploration", "Spaces", "Stationery", "TabletopGames", "Taxidermy",
+//        "Technology" ,"Television" ,"Textiles" ,"Theater", "Thrillers" ,"Translations",
+//        "Typography" ,"Vegan" ,"Video", "VideoArt" ,"VideoGames" ,"Wearables",
+//        "Weaving" ,"Web", "Webcomics" ,"Webseries", "Woodworking" ,"Workshops",
+//        "WorldMusic" ,"YoungAdult" ,"Zines"]
     let countryOption : [String] = ["AT","AU","BE","CA","CH","DE","DK","ES","FR","GB","HK","IE","IT","JP","LU","MX","OTHER","NL","NO","NZ","SE","SG","US"]
     
    
@@ -65,7 +66,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
 
 
     @IBAction func predictTapped(_ sender: UIButton) {
-        print("start!!!")
         
         guard let category = categoryTextfield.text, !category.isEmpty else{
             return
@@ -112,8 +112,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             }
         }
         
-        if user_input.count == 184{
-            print("start...")
+        if user_input.count == 40{
             result = predictUsingModel(userInput: user_input)
         }
         
@@ -126,66 +125,68 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     }
 
     func predictUsingModel(userInput:[String:Double]) -> [String:Double]{
-        let coreMLModel = my_model()
-        guard let caseStatePredict = try? coreMLModel.prediction(normalDuration:user_input["normalDuration"]!, normalGoal:user_input["normalGoal"]!, AT:user_input["AT"]!, AU:user_input["AU"]!, BE:user_input["BE"]!, CA:user_input["CA"]!, CH:user_input["CH"]!,
-            DE:user_input["DE"]!, DK:user_input["DK"]!, ES:user_input["ES"]!, FR:user_input["FR"]!, GB:user_input["GB"]!,
-            HK:user_input["HK"]!, IE:user_input["IE"]!, IT:user_input["IT"]!, JP:user_input["JP"]!, LU:user_input["LU"]!,
-            MX:user_input["MX"]!, OTHER:user_input["OTHER"]!, NL:user_input["NL"]!, NO_:user_input["NO"]!, NZ:user_input["NZ"]!,
-            SE:user_input["SE"]!, SG:user_input["SG"]!, US:user_input["US"]!, ThreeDPrinting:user_input["ThreeDPrinting"]!, Academic:user_input["Academic"]!,
-            Accessories:user_input["Accessories"]!, Action:user_input["Action"]!, Animals:user_input["Animals"]!,
-            Animation:user_input["Animation"]!, Anthologies:user_input["Anthologies"]!,
-            Apparel:user_input["Apparel"]!, Apps:user_input["Apps"]!, Architecture:user_input["Architecture"]!,
-            Art:user_input["Art"]!, ArtBooks:user_input["ArtBooks"]!, Audio:user_input["Audio"]!,
-            Bacon:user_input["Bacon"]!, Blues:user_input["Blues"]! , Calendars:user_input["Calendars"]!,
-            CameraEquipment:user_input["CameraEquipment"]! , Candles:user_input["Candles"]!, Ceramics:user_input["Ceramics"]!,
-            ChildrensBooks:user_input["ChildrensBooks"]!, Childrenswear:user_input["Childrenswear"]!, Chiptune:user_input["Chiptune"]!,
-            CivicDesign:user_input["CivicDesign"]!, ClassicalMusic:user_input["ClassicalMusic"]!, Comedy:user_input["Comedy"]!,
-            ComicBooks:user_input["ComicBooks"]!, Comics:user_input["Comics"]!, CommunityGardens:user_input["CommunityGardens"]!,
-            ConceptualArt:user_input["ConceptualArt"]!, Cookbooks:user_input["Cookbooks"]!, CountryFolk:user_input["CountryFolk"]!,
-            Couture:user_input["Couture"]!, Crafts:user_input["Crafts"]!, Crochet:user_input["Crochet"]!,
-            DIY:user_input["DIY"]!, DIYElectronics:user_input["DIYElectronics"]!, Dance:user_input["Dance"]!, Design:user_input["Design"]!,
-            DigitalArt:user_input["DigitalArt"]!, Documentary:user_input["Documentary"]!, Drama:user_input["Drama"]!,
-            Drinks:user_input["Drinks"]!, ElectronicMusic:user_input["ElectronicMusic"]!, Embroidery:user_input["Embroidery"]!,
-            Events:user_input["Events"]!, Experimental:user_input["Experimental"]!, FabricationTools:user_input["FabricationTools"]!,
-            Faith:user_input["Faith"]! ,Family:user_input["Family"]!, Fantasy:user_input["Fantasy"]!,
-            FarmersMarkets:user_input["FarmersMarkets"]!, Farms:user_input["Farms"]!, Fashion:user_input["Fashion"]!,
-            Festivals:user_input["Festivals"]!, Fiction:user_input["Fiction"]!, FilmVideo:user_input["FilmVideo"]!,
-            FineArt:user_input["FineArt"]!, Flight:user_input["Flight"]!, Food:user_input["Food"]!,
-            FoodTrucks:user_input["FoodTrucks"]!, Footwear:user_input["Footwear"]!, Gadgets:user_input["Gadgets"]!,
-            Games:user_input["Games"]!, GamingHardware:user_input["GamingHardware"]!, Glass:user_input["Glass"]!, GraphicDesign:user_input["GraphicDesign"]!,
-            GraphicNovels:user_input["GraphicNovels"]!, Hardware:user_input["Hardware"]!, HipHop:user_input["HipHop"]!,
-            Horror:user_input["Horror"]!, Illustration:user_input["Illustration"]!, Immersive:user_input["Immersive"]!,
-            IndieRock:user_input["IndieRock"]!, Installations:user_input["Installations"]!, InteractiveDesign:user_input["InteractiveDesign"]!,
-            Jazz:user_input["Jazz"]!, Jewelry:user_input["Jewelry"]!, Journalism:user_input["Journalism"]!,
-            Kids:user_input["Kids"]!, Knitting:user_input["Knitting"]!, Latin:user_input["Latin"]!, Letterpress:user_input["Letterpress"]!,
-            LiteraryJournals:user_input["LiteraryJournals"]!, LiterarySpaces:user_input["LiterarySpaces"]!, LiveGames:user_input["LiveGames"]!,
-            Makerspaces:user_input["Makerspaces"]!, Metal:user_input["Metal"]!, MixedMedia:user_input["MixedMedia"]!,
-            MobileGames:user_input["MobileGames"]!, MovieTheaters:user_input["MovieTheaters"]!, Music:user_input["Music"]!,
-            MusicVideos:user_input["MusicVideos"]!, Musical:user_input["Musical"]!,
-            NarrativeFilm:user_input["NarrativeFilm"]!, Nature:user_input["Nature"]!, Nonfiction:user_input["Nonfiction"]!,
-            Painting:user_input["Painting"]!, People:user_input["People"]!,
-            PerformanceArt:user_input["PerformanceArt"]!, Performances:user_input["Performances"]!, Periodicals:user_input["Performances"]!,
-            PetFashion:user_input["PetFashion"]!, Photo:user_input["Photo"]!,
-            Photobooks:user_input["Photobooks"]!, Photography:user_input["Photography"]!, Places:user_input["Places"]!,
-            PlayingCards:user_input["PlayingCards"]!, Plays:user_input["Plays"]!, Poetry:user_input["Poetry"]!,
-            Pop:user_input["Pop"]!, Pottery:user_input["Pottery"]!, Print:user_input["Print"]!, Printing:user_input["Printing"]!,
-            ProductDesign:user_input["ProductDesign"]!, PublicArt:user_input["PublicArt"]!,
-            Publishing:user_input["Publishing"]!, Punk:user_input["Punk"]!, Puzzles:user_input["Puzzles"]!, Quilts:user_input["Quilts"]!,
-            RB:user_input["RB"]!, RadioPodcasts:user_input["RadioPodcasts"]!,
-            Readytowear:user_input["Readytowear"]!, Residencies:user_input["Residencies"]!, Restaurants:user_input["Restaurants"]!,
-            Robots:user_input["Robots"]!, Rock:user_input["Rock"]!, Romance:user_input["Romance"]!,
-            ScienceFiction:user_input["ScienceFiction"]!, Sculpture:user_input["Sculpture"]!, Shorts:user_input["Shorts"]!,
-            SmallBatch:user_input["SmallBatch"]!, Software:user_input["Software"]!, Sound:user_input["Sound"]!,
-            SpaceExploration:user_input["SpaceExploration"]!, Spaces:user_input["Spaces"]!, Stationery:user_input["Stationery"]!,
-            TabletopGames:user_input["TabletopGames"]!, Taxidermy:user_input["Taxidermy"]!,
-            Technology:user_input["Technology"]!, Television:user_input["Television"]!, Textiles:user_input["Textiles"]!, Theater:user_input["Theater"]!,
-            Thrillers:user_input["Thrillers"]!, Translations:user_input["Translations"]!, Typography:user_input["Typography"]!,
-            Vegan:user_input["Vegan"]!, Video:user_input["Video"]!, VideoArt:user_input["VideoArt"]!, VideoGames:user_input["VideoGames"]!,
-            Wearables:user_input["Wearables"]!, Weaving:user_input["Weaving"]!, Web:user_input["Web"]!, Webcomics:user_input["Webcomics"]!,
-            Webseries:user_input["Webseries"]!, Woodworking:user_input["Woodworking"]!, Workshops:user_input["Workshops"]!,
-            WorldMusic:user_input["WorldMusic"]!, YoungAdult:user_input["YoungAdult"]!, Zines:user_input["Zines"]!) else {
-            fatalError("Unexpected runtime error.")
-        }
+        let coreMLModel = bestmodel()
+        guard let caseStatePredict = try? coreMLModel.prediction(normalDuration: user_input["normalDuration"]!, normalGoal: user_input["normalGoal"]!, AT: user_input["AT"]!, AU: user_input["AU"]!, BE: user_input["BE"]!, CA: user_input["CA"]!, CH: user_input["CH"]!, DE: user_input["DE"]!, DK: user_input["DK"]!, ES: user_input["ES"]!, FR: user_input["FR"]!, GB: user_input["GB"]!, HK: user_input["HK"]!, IE: user_input["IE"]!, IT: user_input["IT"]!, JP: user_input["JP"]!, LU: user_input["LU"]!, MX: user_input["MX"]!, OTHER: user_input["OTHER"]!, NL: user_input["NL"]!, NO_: user_input["NO"]!, NZ: user_input["NZ"]!, SE: user_input["SE"]!, SG: user_input["SG"]!, US: user_input["US"]!, Art: user_input["Art"]!, Comics: user_input["Comics"]!, Crafts: user_input["Crafts"]!, Dance: user_input["Dance"]!, Design: user_input["Design"]!, Fashion: user_input["Fashion"]!, FilmVideo: user_input["FilmVideo"]!, Food: user_input["Food"]!, Games: user_input["Games"]!, Journalism: user_input["Journalism"]!, Music: user_input["Music"]!, Photography: user_input["Photography"]!, Publishing: user_input["Publishing"]!, Technology: user_input["Technology"]!, Theater: user_input["Theater"]!) else {
+            fatalError("Unexpected runtime error.") }
+//        guard let caseStatePredict = try? coreMLModel.prediction(normalDuration:user_input["normalDuration"]!, normalGoal:user_input["normalGoal"]!, AT:user_input["AT"]!, AU:user_input["AU"]!, BE:user_input["BE"]!, CA:user_input["CA"]!, CH:user_input["CH"]!,
+//            DE:user_input["DE"]!, DK:user_input["DK"]!, ES:user_input["ES"]!, FR:user_input["FR"]!, GB:user_input["GB"]!,
+//            HK:user_input["HK"]!, IE:user_input["IE"]!, IT:user_input["IT"]!, JP:user_input["JP"]!, LU:user_input["LU"]!,
+//            MX:user_input["MX"]!, OTHER:user_input["OTHER"]!, NL:user_input["NL"]!, NO_:user_input["NO"]!, NZ:user_input["NZ"]!,
+//            SE:user_input["SE"]!, SG:user_input["SG"]!, US:user_input["US"]!, ThreeDPrinting:user_input["ThreeDPrinting"]!, Academic:user_input["Academic"]!,
+//            Accessories:user_input["Accessories"]!, Action:user_input["Action"]!, Animals:user_input["Animals"]!,
+//            Animation:user_input["Animation"]!, Anthologies:user_input["Anthologies"]!,
+//            Apparel:user_input["Apparel"]!, Apps:user_input["Apps"]!, Architecture:user_input["Architecture"]!,
+//            Art:user_input["Art"]!, ArtBooks:user_input["ArtBooks"]!, Audio:user_input["Audio"]!,
+//            Bacon:user_input["Bacon"]!, Blues:user_input["Blues"]! , Calendars:user_input["Calendars"]!,
+//            CameraEquipment:user_input["CameraEquipment"]! , Candles:user_input["Candles"]!, Ceramics:user_input["Ceramics"]!,
+//            ChildrensBooks:user_input["ChildrensBooks"]!, Childrenswear:user_input["Childrenswear"]!, Chiptune:user_input["Chiptune"]!,
+//            CivicDesign:user_input["CivicDesign"]!, ClassicalMusic:user_input["ClassicalMusic"]!, Comedy:user_input["Comedy"]!,
+//            ComicBooks:user_input["ComicBooks"]!, Comics:user_input["Comics"]!, CommunityGardens:user_input["CommunityGardens"]!,
+//            ConceptualArt:user_input["ConceptualArt"]!, Cookbooks:user_input["Cookbooks"]!, CountryFolk:user_input["CountryFolk"]!,
+//            Couture:user_input["Couture"]!, Crafts:user_input["Crafts"]!, Crochet:user_input["Crochet"]!,
+//            DIY:user_input["DIY"]!, DIYElectronics:user_input["DIYElectronics"]!, Dance:user_input["Dance"]!, Design:user_input["Design"]!,
+//            DigitalArt:user_input["DigitalArt"]!, Documentary:user_input["Documentary"]!, Drama:user_input["Drama"]!,
+//            Drinks:user_input["Drinks"]!, ElectronicMusic:user_input["ElectronicMusic"]!, Embroidery:user_input["Embroidery"]!,
+//            Events:user_input["Events"]!, Experimental:user_input["Experimental"]!, FabricationTools:user_input["FabricationTools"]!,
+//            Faith:user_input["Faith"]! ,Family:user_input["Family"]!, Fantasy:user_input["Fantasy"]!,
+//            FarmersMarkets:user_input["FarmersMarkets"]!, Farms:user_input["Farms"]!, Fashion:user_input["Fashion"]!,
+//            Festivals:user_input["Festivals"]!, Fiction:user_input["Fiction"]!, FilmVideo:user_input["FilmVideo"]!,
+//            FineArt:user_input["FineArt"]!, Flight:user_input["Flight"]!, Food:user_input["Food"]!,
+//            FoodTrucks:user_input["FoodTrucks"]!, Footwear:user_input["Footwear"]!, Gadgets:user_input["Gadgets"]!,
+//            Games:user_input["Games"]!, GamingHardware:user_input["GamingHardware"]!, Glass:user_input["Glass"]!, GraphicDesign:user_input["GraphicDesign"]!,
+//            GraphicNovels:user_input["GraphicNovels"]!, Hardware:user_input["Hardware"]!, HipHop:user_input["HipHop"]!,
+//            Horror:user_input["Horror"]!, Illustration:user_input["Illustration"]!, Immersive:user_input["Immersive"]!,
+//            IndieRock:user_input["IndieRock"]!, Installations:user_input["Installations"]!, InteractiveDesign:user_input["InteractiveDesign"]!,
+//            Jazz:user_input["Jazz"]!, Jewelry:user_input["Jewelry"]!, Journalism:user_input["Journalism"]!,
+//            Kids:user_input["Kids"]!, Knitting:user_input["Knitting"]!, Latin:user_input["Latin"]!, Letterpress:user_input["Letterpress"]!,
+//            LiteraryJournals:user_input["LiteraryJournals"]!, LiterarySpaces:user_input["LiterarySpaces"]!, LiveGames:user_input["LiveGames"]!,
+//            Makerspaces:user_input["Makerspaces"]!, Metal:user_input["Metal"]!, MixedMedia:user_input["MixedMedia"]!,
+//            MobileGames:user_input["MobileGames"]!, MovieTheaters:user_input["MovieTheaters"]!, Music:user_input["Music"]!,
+//            MusicVideos:user_input["MusicVideos"]!, Musical:user_input["Musical"]!,
+//            NarrativeFilm:user_input["NarrativeFilm"]!, Nature:user_input["Nature"]!, Nonfiction:user_input["Nonfiction"]!,
+//            Painting:user_input["Painting"]!, People:user_input["People"]!,
+//            PerformanceArt:user_input["PerformanceArt"]!, Performances:user_input["Performances"]!, Periodicals:user_input["Performances"]!,
+//            PetFashion:user_input["PetFashion"]!, Photo:user_input["Photo"]!,
+//            Photobooks:user_input["Photobooks"]!, Photography:user_input["Photography"]!, Places:user_input["Places"]!,
+//            PlayingCards:user_input["PlayingCards"]!, Plays:user_input["Plays"]!, Poetry:user_input["Poetry"]!,
+//            Pop:user_input["Pop"]!, Pottery:user_input["Pottery"]!, Print:user_input["Print"]!, Printing:user_input["Printing"]!,
+//            ProductDesign:user_input["ProductDesign"]!, PublicArt:user_input["PublicArt"]!,
+//            Publishing:user_input["Publishing"]!, Punk:user_input["Punk"]!, Puzzles:user_input["Puzzles"]!, Quilts:user_input["Quilts"]!,
+//            RB:user_input["RB"]!, RadioPodcasts:user_input["RadioPodcasts"]!,
+//            Readytowear:user_input["Readytowear"]!, Residencies:user_input["Residencies"]!, Restaurants:user_input["Restaurants"]!,
+//            Robots:user_input["Robots"]!, Rock:user_input["Rock"]!, Romance:user_input["Romance"]!,
+//            ScienceFiction:user_input["ScienceFiction"]!, Sculpture:user_input["Sculpture"]!, Shorts:user_input["Shorts"]!,
+//            SmallBatch:user_input["SmallBatch"]!, Software:user_input["Software"]!, Sound:user_input["Sound"]!,
+//            SpaceExploration:user_input["SpaceExploration"]!, Spaces:user_input["Spaces"]!, Stationery:user_input["Stationery"]!,
+//            TabletopGames:user_input["TabletopGames"]!, Taxidermy:user_input["Taxidermy"]!,
+//            Technology:user_input["Technology"]!, Television:user_input["Television"]!, Textiles:user_input["Textiles"]!, Theater:user_input["Theater"]!,
+//            Thrillers:user_input["Thrillers"]!, Translations:user_input["Translations"]!, Typography:user_input["Typography"]!,
+//            Vegan:user_input["Vegan"]!, Video:user_input["Video"]!, VideoArt:user_input["VideoArt"]!, VideoGames:user_input["VideoGames"]!,
+//            Wearables:user_input["Wearables"]!, Weaving:user_input["Weaving"]!, Web:user_input["Web"]!, Webcomics:user_input["Webcomics"]!,
+//            Webseries:user_input["Webseries"]!, Woodworking:user_input["Woodworking"]!, Workshops:user_input["Workshops"]!,
+//            WorldMusic:user_input["WorldMusic"]!, YoungAdult:user_input["YoungAdult"]!, Zines:user_input["Zines"]!) else {
+//            fatalError("Unexpected runtime error.")
+//        }
         
         let state = Double(caseStatePredict.Y)
         let probability = Double(caseStatePredict.classProbability[1]!)
